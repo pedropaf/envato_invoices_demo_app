@@ -21,7 +21,6 @@ class InvoicePdf
     attr_reader :invoice
 
     def as_html
-      set_instance_variable :invoice, invoice
-      render template: "invoices/pdf", layout: "invoice_pdf"
+      render template: "invoices/pdf", layout: "invoice_pdf", locals: { invoice: invoice }
     end
 end
